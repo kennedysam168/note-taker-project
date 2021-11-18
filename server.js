@@ -17,16 +17,13 @@ app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'))
 })
 
-app.get('*', (req, res) => {
-    // return index.html
-    res.sendFile(path.join(__dirname, './public/index.html'))
-})
 
 app.get('/api/notes', (req, res) => {
     // read the `db.json` file and return all saved notes as JSON
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        if(err){console.log(err)}
         console.log(data)
-        
+        res.json(JSON.parse(data))
      })
          
 
@@ -43,8 +40,8 @@ app.post('/api/notes', (req, res) => {
   if (title && text) {
     // Variable for the object we will save
     const newNote = {
-      title: req.body.title,
-      text: req.body.text,
+      title: title,
+      text: text,
     };
 
     dbJson.push(newNote);
@@ -64,6 +61,10 @@ app.post('/api/notes', (req, res) => {
 
 });
 
+app.get('*', (req, res) => {
+    // return index.html
+    res.sendFile(path.join(__dirname, './public/index.html'))
+})
 
 app.listen(PORT, () =>
   console.log(`Listening at http://localhost:${PORT}`)
