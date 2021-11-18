@@ -1,5 +1,17 @@
 # note-taker-project
 
+## Description 
+For this project I was tasked with creating the backend to a webpage that allows you to leave notes for yourself and have them displayed on the screen. This project created a intuitive way to leave reminders and notes to keep you from forgetting things like appoitments.
+
+## Installation
+To deploy this project I needed to make sure i had all the dependecies (like express) installed. I then had to make sure that all of my routes were working well. From there I had to install Heroku and create a heroku app in order to deploy to heroku. Once my project was done i pushed it to heroku for deployment.
+
+## Usage
+To use the webpage you simply click the the 'get started' button on the homepage, and then once on the notes page you enter in the title of your note and then the note itelf and click on the save icon in the top right corner. To start a new note and clear your current note you click the plus sign in the top right corner.
+
+
+
+## Acceptance Criteria
 ```
 GIVEN a note-taking application
 WHEN I open the Note Taker
